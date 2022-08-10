@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  
+
 </script>
 
 <template>
-  <router-view />
+  Sequencing
 </template>
 
 <style lang="scss" scoped>
