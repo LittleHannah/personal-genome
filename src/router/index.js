@@ -13,6 +13,7 @@ const routes = [
   {
     path: '/reports',
     name: 'Reports',
+    redirect: '/reports/summary',
     component: () => import('@/views/reports/index.vue'),
     children: [{
       path: '/reports/summary',

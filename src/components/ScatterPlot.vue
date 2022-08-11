@@ -1,9 +1,10 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
 <template>
-  <h1>Ancestry</h1>
+  <h1>Summary</h1>
+
 </template>
 
 <style lang="scss" scoped>

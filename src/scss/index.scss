@@ -3,4 +3,11 @@
 :root {
   --main-bg-color: coral; 
   --navbar-height: 56px;
+  --footer-height: 56px;
+  --bd-violet-rgb: 112.520718,44.062154,249.437846;
+  --dark-violet-rgb: 108,51,238;
+}
+
+.pretty-title {
+  color: rgba(var(--bd-violet-rgb),0.9);
 }
