@@ -1,8 +1,18 @@
 <script setup>
-  import { reactive, ref } from 'vue'
-  import { useRouter , useRoute } from 'vue-router'
+  // import { reactive, ref } from 'vue'
+  // import { onActivated, onMounted } from 'vue'
+  // import { useRoute } from 'vue-router'
 
-  const show = ref()
+  // const show = ref()
+  // const route = useRoute()
+  // let data = reactive({
+  //   contents: []
+  // })
+
+  // onMounted(() => {
+  //   data.contents = route.meta.contents
+  //   console.log(route.meta.contents)
+  // })
 </script>
 
 <template>
@@ -17,50 +27,29 @@
           </div>
           <div class="offcanvas-body">
               <ul class="list-unstyled side-nav">
-                <span>Summary</span>
+                <span>Getting Started</span>
                 <li><router-link active-class="side-nav-active" to="/reports/summary">Summary</router-link></li>
                 <span>Ancestry</span>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/admixture">Admixture</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/mt">MT Chromosome</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/y">Y Chromosome</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/aims">AIMS</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/as">Archaic Seeker</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/ancestry/pca">PCA</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/admixture">Admixture</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/mt">MT Chromosome</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/y">Y Chromosome</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/aims">AIMS</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/as">Archaic Seeker</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/pca">PCA</router-link></li>
                 <span>Disease</span>
-                <li><router-link active-class="side-nav-active" to="/reports/diseases/snpedia">SNPedia</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/diseases/prs">PRS</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/diseases/geneset">Gene Set</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/snpedia">SNPedia</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/prs">PRS</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/geneset">Gene Set</router-link></li>
                 <span>Sequencing</span>
-                <li><router-link active-class="side-nav-active" to="/reports/sequencing/statistics">Statistics</router-link></li>
-                <li><router-link active-class="side-nav-active" to="/reports/sequencing/hla">HLA</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/statistics">Statistics</router-link></li>
+                <li><router-link active-class="side-nav-active" to="/reports/hla">HLA</router-link></li>
 
               </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10">
-        <div class="row" style="display:flex;flex-direction:row-reverse">
-          <!-- table of contents -->
-          <div class="col-md-3">
-            <div class="text-muted">
-              <div class="d-grid">
-                <button @click="show = !show" class="btn btn-primary mobile-content-title" style="text-align:left" type="button">On this page</button>
-                <span class="laptop-content-title">On this page</span>
-              </div>
-              <Transition>
-                <div class="page-table-of-content" v-show="show">
-                  balabala
-                </div>
-              </Transition>
-            </div> 
-          </div>
-          <!-- reports contents -->
-          <div class="col-md-9">
-            <div>
-              <router-view />
-            </div>
-          </div>
-        </div>
+        <router-view />
       </div>
     </div>
 
@@ -70,6 +59,13 @@
 <style lang="scss" scoped>
 .side-nav {
   width: 100%;
+  > span {
+    font-size: 0.875rem;
+    font-weight: 650;
+    color: rgba(var(--dark-violet-rgb), 1);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
   > li {
     width: 100%;
     margin: 0.275rem 0;
@@ -93,38 +89,4 @@
   font-weight: 560;
   color: rgba(0,0,0,0.85) !important;
 }
-@include media-breakpoint-down(md) { 
- .mobile-content-title {
-  display: block;
- }
- .laptop-content-title {
-  display: none;
- }
-
-}
-@include media-breakpoint-up(md) { 
-  .mobile-content-title {
-  display: none;
- }
- .laptop-content-title {
-  display: block;
- }
- .page-table-of-content {
-  display: block !important;
- }
-}
-/*
-  进入和离开动画可以使用不同
-  持续时间和速度曲线。
-*/
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-
 </style>
