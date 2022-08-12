@@ -23,7 +23,8 @@ const routes = [
     }, {
       path: '/reports/admixture',
       name: 'Ancestry',
-      component: () => import('@/views/reports/pages/Admixture.vue')
+      component: () => import('@/views/reports/pages/Admixture.vue'),
+      meta: { contents: ['hello', 'hi', 'okay']}
     }]
   }
 ]

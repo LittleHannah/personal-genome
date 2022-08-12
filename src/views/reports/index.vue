@@ -30,6 +30,7 @@
                 <span>Getting Started</span>
                 <li><router-link active-class="side-nav-active" to="/reports/summary">Summary</router-link></li>
                 <span>Ancestry</span>
+                <li><router-link active-class="side-nav-active" to="/reports/admixture">Overview</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/admixture">Admixture</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/mt">MT Chromosome</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/y">Y Chromosome</router-link></li>
@@ -37,6 +38,7 @@
                 <li><router-link active-class="side-nav-active" to="/reports/as">Archaic Seeker</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/pca">PCA</router-link></li>
                 <span>Disease</span>
+                <li><router-link active-class="side-nav-active" to="/reports/admixture">Overview</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/snpedia">SNPedia</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/prs">PRS</router-link></li>
                 <li><router-link active-class="side-nav-active" to="/reports/geneset">Gene Set</router-link></li>
@@ -77,7 +79,6 @@
     margin-left: 1rem;
     border-radius: 5px;
     color: grey;
-
    }
    > a:hover {
     background-color: rgba(var(--bd-violet-rgb), 0.1);

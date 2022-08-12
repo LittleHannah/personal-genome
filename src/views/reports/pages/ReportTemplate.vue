@@ -1,16 +1,14 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
+import { onActivated, onMounted, reactive, ref } from 'vue'
 import { useRoute } from 'vue-router'
-
-const show = ref()
 const route = useRoute()
+const show = ref()
 let data = reactive({
   contents: []
 })
 
 onMounted(() => {
   data.contents = route.meta.contents
-  console.log(data.contents)
 })
 </script>
 
@@ -25,9 +23,9 @@ onMounted(() => {
         </div>
         <Transition>
           <div class="page-table-of-content" v-show="show">
-            <ul class="list-unstyled">
+            <ul>
               <li v-for="(content,index) in data.contents" v-bind:key="index">
-                <a class="link-secondary" :href="'#'+content">{{ content }}</a>
+                <a :href="'#'+content">{{ content }}</a>
               </li>
             </ul>
           </div>
@@ -37,7 +35,10 @@ onMounted(() => {
     <!-- reports contents -->
     <div class="col-md-9">
       <div>
-        <h1>Admixture</h1>
+        <h1>Summary</h1>
+        <h2 id="hello">Hello</h2>
+        <h2 id="hi">Hi</h2>
+        <h2 id="okay">Okay</h2>
       </div>
     </div>
   </div>
